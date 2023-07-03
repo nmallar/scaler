@@ -1,3 +1,6 @@
+#1. Given an array of N elements , return the number of elements that have atleast one element greater than itself
+ 
+
 def getMax(arr):
     max=arr[0]
     for i in range(1,len(arr)):
