@@ -16,5 +16,5 @@ if __name__=="__main__":
     
     print(pairExists(arr,k))
     
-    
+ # TC - N(N-1)/2   
     
