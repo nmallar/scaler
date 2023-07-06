@@ -20,6 +20,7 @@ for i in range(len(A)):
     else:
         dict[current_sum]=i
 print(max_len)      
+
 # prefixset=set(psum)
 # if len(psum)!=len(prefixset) or 0 in prefixset:
 #     print(f" There exists a subarray with sum=0")

@@ -16,4 +16,3 @@ while i==0 or i>0:
     i-=1
 
 print(f"Number of leaders are {leaderCount}")
-print(max(1,2))
