@@ -20,17 +20,39 @@
 #         return max
 
 #Solution approach
-#f(i, j) = |A[i] - A[j]| + |i - j| can be written in 4 ways 
-# (Since we are looking at max value, we don’t even care if the value becomes negative as long as we are also covering the max value in some way).
+# An efficient solution in O(n) time complexity can be worked out using the properties of absolute values. 
+# f(i, j) = |A[i] – A[j]| + |i – j| can be written in 4 ways (Since we are looking at max value, we don’t even care if the value becomes negative as long as we are also covering the max value in some way). 
 
-# (A[i] + i) - (A[j] + j)
-# -(A[i] - i) + (A[j] - j) 
-# (A[i] - i) - (A[j] - j) 
-# (-A[i] - i) + (A[j] + j) = -(A[i] + i) + (A[j] + j)
-# note that case 1 and 4 are equivalent and so are case 2 and 3.
+# Case 1: A[i] > A[j] and i > j
+# |A[i] - A[j]| = A[i] - A[j]
+# |i -j| = i - j
+# hence, f(i, j) = (A[i] + i) - (A[j] + j)
 
-# We can construct two arrays with values: A[i] + i and A[i] - i. Then, for the above 2 cases, we find the maximum value possible. 
-# For that, we just have to store minimum and maximum values of expressions A[i] + i and A[i] - i for all i.
+# Case 2: A[i] < A[j] and i < j
+# |A[i] - A[j]| = -(A[i]) + A[j]
+# |i -j| = -(i) + j
+# hence, f(i, j) = -(A[i] + i) + (A[j] + j)
+
+# Case 3: A[i] > A[j] and i < j
+# |A[i] - A[j]| = A[i] - A[j]
+# |i -j| = -(i) + j
+# hence, f(i, j) = (A[i] - i) - (A[j] - j)
+
+# Case 4: A[i] < A[j] and i > j
+# |A[i] - A[j]| = -(A[i]) + A[j]
+# |i -j| = i - j
+# hence, f(i, j) = -(A[i] - i) + (A[j] - j)
+# Note that cases 1 and 2 are equivalent and so are cases 3 and 4 and hence we can design our algorithm only for two cases as it will cover all the possible cases.
+
+# 1. Calculate the value of A[i] + i and A[i] – i for every element of the array while traversing through the array.
+# 2. Then for the two equivalent cases, we find the maximum possible value. For that, we have to store minimum and maximum values of expressions 
+# A[i] + i and A[i] – i for all i.
+# 3. Hence the required maximum absolute difference is maximum of two values i.e. max((A[i] + i) – (A[j] + j)) and max((A[i] – i) – (A[j] – j)).
+# These values can be found easily in linear time. 
+# a. For max((A[i] + i) – (A[j] + j)) Maintain two variables max1 and min1 which will store maximum and minimum values of A[i] + i respectively.
+# max((A[i] + i) – (A[j] + j)) = max1 – min1 
+# b. For max((A[i] – i) – (A[j] – j)). Maintain two variables max2 and min2 which will store maximum and minimum values of A[i] – i respectively.
+# max((A[i] – i) – (A[j] – j)) = max2 – min2
 
 import sys
 

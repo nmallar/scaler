@@ -38,7 +38,7 @@ for n in range(0,len(B)):
     i=B[n][0]
     j=B[n][1]
     D=B[n][2]
-    #for x in range(i-1,j+1-1):
+    
     sum[i-1]+=D
     if j < A:
         sum[j]+=-D
