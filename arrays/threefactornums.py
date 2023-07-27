@@ -10,12 +10,10 @@ for c in range(Q):
     count=0
     for num in range(s[c]-1,e[c]):
         factors=0
-        x=arr[num]
-        
-    
+        x=arr[num]        
         
         for i in range(1,int(math.sqrt(x))+1):
-            #print(f"sqrt {int(math.sqrt(x))}")
+            
             if x%i==0:
                 if i != x/i:
                     factors+=2
