@@ -1,0 +1,44 @@
+
+
+index  1          2     3     4    5
+A =   [10,       20,    30,   40,  50]
+      start                         end
+       i        i    while (i< j)         j        j
+        swap(a[i],a[j])
+        i++
+        j--
+       i<j
+
+      i=start
+      j=end
+      swap(start ,end)
+
+reverse(Arr, start,end) {
+ i=start
+ j=end
+ for (i=start,j=end;i<j;i++,j--)
+ {
+    temp=a[i]
+    a[i]=a[j]
+    a[j]=temp
+    i++
+    j--
+ }
+}
+
+ rotate an array 
+
+Original array [10,20,30, 40,50]
+k=1
+[50,10,20,30,40]
+k=2
+[40,50,10,20,30]
+k=5
+[10,20,30,40,50]
+k=6
+[50,10,20,30,40]
+
+
+reverse(Arr,1,5)
+
+
